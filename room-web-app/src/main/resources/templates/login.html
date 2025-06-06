@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Landon Hotel | Login</title>
+</head>
+<body>
+<header>
+    <a th:href="@{/}">Home</a>
+</header>
+<h1>Login to Landon Hotel</h1>
+<div th:if="@{param.error}">
+    Invalid Username or Password
+</div>
+<div th:if="@{param.logout}">
+    You have been logged out
+</div>
+<form method="post" th:action="@{/login}">
+    <div><label>Username: <input name="username" type="text"/></label></div>
+    <div><label>Password: <input name="password" type="password"/></label></div>
+    <div><input type="submit" value="Sign-in"/></div>
+</form>
+</body>
+</html>
